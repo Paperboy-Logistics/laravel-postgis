@@ -1,5 +1,5 @@
 {
-    "name": "paperboy-logistics/laravel-postgis",
+    "name": "mstaack/laravel-postgis",
     "description": "Fork of mstaack/laravel-postgis with Laravel 11 support. Bosnadev dependency removed and inlined.",
     "require": {
         "php": ">=8.1",
