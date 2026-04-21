@@ -4,7 +4,7 @@ use Illuminate\Database\Connection;
 use PDO;
 use MStaack\LaravelPostgis\PostgisConnection;
 
-class ConnectionFactory extends \Bosnadev\Database\Connectors\ConnectionFactory
+class ConnectionFactory extends \MStaack\LaravelPostgis\Database\Connectors\ConnectionFactory
 {
     /**
      * @param string       $driver
