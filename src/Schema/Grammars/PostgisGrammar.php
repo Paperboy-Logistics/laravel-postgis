@@ -3,7 +3,7 @@
 use Illuminate\Support\Fluent;
 use MStaack\LaravelPostgis\Schema\Blueprint;
 use MStaack\LaravelPostgis\Exceptions\UnsupportedGeomtypeException;
-use Bosnadev\Database\Schema\Grammars\PostgresGrammar;
+use MStaack\LaravelPostgis\Database\Schema\Grammars\PostgresGrammar;
 
 class PostgisGrammar extends PostgresGrammar
 {

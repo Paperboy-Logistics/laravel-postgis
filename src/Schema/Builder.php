@@ -2,7 +2,7 @@
 
 use Closure;
 
-class Builder extends \Bosnadev\Database\Schema\Builder
+class Builder extends \MStaack\LaravelPostgis\Database\Schema\Builder
 {
     /**
      * Create a new command set with a Closure.

@@ -2,7 +2,7 @@
 
 namespace MStaack\LaravelPostgis;
 
-use Bosnadev\Database\DatabaseServiceProvider as PostgresDatabaseServiceProvider;
+use MStaack\LaravelPostgis\Database\DatabaseServiceProvider as PostgresDatabaseServiceProvider;
 use Illuminate\Database\DatabaseManager;
 use MStaack\LaravelPostgis\Connectors\ConnectionFactory;
 

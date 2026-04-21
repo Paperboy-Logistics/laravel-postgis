@@ -1,6 +1,6 @@
 <?php namespace MStaack\LaravelPostgis\Schema;
 
-class Blueprint extends \Bosnadev\Database\Schema\Blueprint
+class Blueprint extends \MStaack\LaravelPostgis\Database\Schema\Blueprint
 {
     /**
      * Add a point column on the table
