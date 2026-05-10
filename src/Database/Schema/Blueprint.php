@@ -2,6 +2,9 @@
 
 namespace MStaack\LaravelPostgis\Database\Schema;
 
+use Illuminate\Database\Connection;
+use Illuminate\Database\Schema\Grammars\Grammar;
+
 class Blueprint extends \Illuminate\Database\Schema\Blueprint
 {
     public $inherits;
@@ -11,15 +14,17 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
         $this->inherits = $table;
     }
 
-    protected function addFluentIndexes()
+    protected function addFluentIndexes(Connection $connection, Grammar $grammar)
     {
         foreach ($this->columns as $column) {
-            foreach (array('primary', 'unique', 'index', 'gin', 'gist') as $index) {
-                if ($column->$index === true) {
-                    $this->$index($column->name);
+            foreach (['primary', 'unique', 'index', 'fulltext', 'fullText', 'spatialIndex', 'gin', 'gist'] as $index) {
+                if ($column->{$index} === true) {
+                    $this->{$index}($column->name);
+                    $column->{$index} = null;
                     continue 2;
-                } elseif (isset($column->$index)) {
-                    $this->$index($column->name, $column->$index);
+                } elseif (isset($column->{$index})) {
+                    $this->{$index}($column->name, $column->{$index});
+                    $column->{$index} = null;
                     continue 2;
                 }
             }
